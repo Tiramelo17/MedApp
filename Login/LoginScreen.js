@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {View, Text, StyleSheet,TextInput, Alert} from 'react-native'
+import {View, Text, StyleSheet,TextInput, Alert, TouchableOpacity} from 'react-native'
 
 import Constants from 'expo-constants'
 
@@ -7,7 +7,7 @@ import CustomButton from '../components/CustomButton'
 
 import Style from './LoginScreenStyles'
 
-import * as LoginClienteAPI from './ClienteAPI'
+import * as LoginClienteAPI from '../APIs/ClienteAPI'
 
 export default ({navigation, route}) => {
 
@@ -31,23 +31,35 @@ export default ({navigation, route}) => {
             <Text style={Style.text}>MEDAPP </Text>
         </View>
   </View>
+    <View  style={Style.input}>
       <TextInput
-       style={{height: 40}}
-        placeholder="Email"
+       style={Style.textInput}
+        placeholder="     Email"
         onChangeText={newEmail => setEmail(newEmail)}
         defaultValue={email}
     />
 
       <TextInput
-        style={{height: 40}}
-        placeholder="Password"
+        style={Style.textInput}
+        placeholder="     Password"
         onChangeText={newSenha => setSenha(newSenha)}
         defaultValue={senha}
     />
-
+    <TouchableOpacity>
+      <Text>esqueceu a senha?</Text>
+    </TouchableOpacity> 
       <View style={Style.buttons}>
-      <CustomButton title= 'Login' color = 'yellow' onPress={()=> validaEmail()}/>
+        <CustomButton title= 'Login' color = '#6046F2' onPress={()=> validaEmail()}/>
+      
+        <View style = {Style.cadastro} >
+          <TouchableOpacity>
+              <Text>
+                Cadastre-se
+              </Text>
+          </TouchableOpacity>
+        </View>
       </View>
+    </View>
     </View>
   )
 }

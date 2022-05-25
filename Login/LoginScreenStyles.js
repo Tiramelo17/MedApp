@@ -6,33 +6,41 @@ const styles = StyleSheet.create({
   container: {
     marginTop: Constants.statusBarHeight,
     flex: 1,
+    backgroundColor: '#24CBAF',
   },
   buttons: {
-    justifyContent: 'space-around',
     flex: 1,
-    padding: 20
+    marginTop: 70,
+    width: '60%'
   },
   view:{
+    marginTop: 40,
     alignItems: 'center',
     padding: 10,
     backgroundColor: '#24CBAF',
-    marginTop:  Constants.statusBarHeight
+    
   },
   text:{
     fontFamily: 'Roboto',
     fontSize: 25,
     fontWeight: 'bold',
-    color: 'white'
-  },
-  img:{
-    width: 100,
-    height: 100,
-    borderColor: 'black',
-    borderRadius: 100,
-    margin: 10
+    color: '#6046F2'
   },
   textoLogo: {
     flexDirection: 'row'
+  }, cadastro: {
+    marginTop: 10,
+    alignItems: 'center',
+  }, input: {
+    marginTop: 200,
+    alignItems: 'center',
+    height: '50%',
+  }, textInput: {
+    marginTop: 10,
+    width: '80%',
+    height: 40,
+    backgroundColor: '#91E843',
+    borderRadius: 10,  
   }
 })
 

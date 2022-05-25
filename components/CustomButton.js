@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     elevation: 5
   },
   text: {
-     color: 'white',
+     color: 'black',
      fontSize: 25,
      fontWeight: 'bold',
      fontFamily: 'Roboto'
