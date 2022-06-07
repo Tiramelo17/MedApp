@@ -3,7 +3,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import LoginScreen from './Login/LoginScreen'
+import CadastroScreen from './Cadastro/CadastroScrren'
 import HomeScreen from './Home/HomeScreen'
+import ListaMedicosScreen from './CadastroMedico/ListaMedicoScreen'
+import FichaMedicaScreen from './infoMedica/FichaMedicaScreen'
 
 
 const Stack = createNativeStackNavigator();
@@ -42,7 +45,11 @@ export default () => {
         initialRouteName='login'
       >
         <Stack.Screen name="login" component={LoginScreen} options={{headerShown : false}} />
+        <Stack.Screen name="cadastro" component={CadastroScreen} options={{headerShown : false}} />
         <Stack.Screen name="home" component={HomeScreen} options={{headerShown : false}} />
+        <Stack.Screen name='listaMedicos' component={ListaMedicosScreen} options={{title:'Lista de médicos'}} />
+        <Stack.Screen name='fichaMedica' component={FichaMedicaScreen} options={{title:'Lista de médicos'}} />
+
       </Stack.Navigator>
     </NavigationContainer>
   )

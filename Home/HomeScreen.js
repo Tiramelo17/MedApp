@@ -1,9 +1,10 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, Image} from 'react-native'
 
 import Constants from 'expo-constants'
 
 import CustomButton from '../components/CustomButton'
+import logo from '../imagens/logo.jpeg'
 
 
 export default ({navigation, route}) => {
@@ -25,12 +26,15 @@ const onClickRastreio =() => {
 
   return(
     <View style={styles.container}>
-      <View style={styles.buttons}>
-      <CustomButton title= 'SOS' color = 'red' onPress={()=> navigation.navigate('contatos')}/>
-      <CustomButton title= 'Registro' onPress={onClickRegistro}/>
-      <CustomButton title= 'Rastreio' onPress={()=> navigation.navigate('rastreio')}/>
-
-      </View>
+           <View style={styles.view}>
+            <Image  source={logo}/> 
+           </View>
+           <View style={styles.button}>
+            <CustomButton title= 'Cadastrar Médico' color = '#6046F2' onPress={()=> navigation.navigate('listaMedicos')
+}/>
+            <CustomButton title= 'Ficha Médica' color = '#6046F2' onPress={()=> navigation.navigate('fichaMedica')
+}/>
+          </View>
     </View>
   )
 }
@@ -39,10 +43,15 @@ const styles = StyleSheet.create({
   container: {
     marginTop: Constants.statusBarHeight,
     flex: 1,
-  },
-  buttons: {
-    justifyContent: 'space-around',
-    flex: 1,
-    padding: 20
+    backgroundColor: '#24CBAF',
+    alignItems: 'center',
+    justifyContent: 'flex-start'
+  }, button : {
+      height: '50%',
+      width: '60%',
+      justifyContent: 'space-around'
+
+  }, view: {
+      height: '50%'
   }
 })

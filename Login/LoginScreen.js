@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {View, Text, StyleSheet,TextInput, Alert, TouchableOpacity} from 'react-native'
+import {View, Text, StyleSheet,TextInput, Alert,Image, TouchableOpacity} from 'react-native'
 
 import Constants from 'expo-constants'
 
@@ -8,15 +8,22 @@ import CustomButton from '../components/CustomButton'
 import Style from './LoginScreenStyles'
 
 import * as LoginClienteAPI from '../APIs/ClienteAPI'
+import logo from '../imagens/logo.jpeg'
 
 export default ({navigation, route}) => {
 
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
+  
+const limparVariaveis = () => {
+    setEmail('')
+    setSenha('')
+  }
   const validaEmail = async () => {
       const dados = await LoginClienteAPI.loginCliente(email,senha);
-      console.log('Resposta dados: '+ dados)
+      console.log('Resposta dados: '+ dados.response)
+      limparVariaveis()
       if(dados.msg !== 'Sucesso'){
         Alert.alert(dados.response)
       } else {
@@ -27,24 +34,26 @@ export default ({navigation, route}) => {
   return(
     <View style={Style.container}>
         <View style = {Style.view}>
-            <View style = {Style.textoLogo}>
-            <Text style={Style.text}>MEDAPP </Text>
+            <Image  source={logo} style = {Style.img}/>     
         </View>
-  </View>
     <View  style={Style.input}>
-      <TextInput
-       style={Style.textInput}
-        placeholder="     Email"
-        onChangeText={newEmail => setEmail(newEmail)}
-        defaultValue={email}
-    />
+     <View style={Style.textInput}> 
+        <TextInput
+          style={{paddingLeft:10, marginTop:5}}
+          placeholder="Email"
+          onChangeText={newEmail => setEmail(newEmail)}
+          defaultValue={email}
+      />
+    </View>
 
+    <View style={Style.textInput}> 
       <TextInput
-        style={Style.textInput}
-        placeholder="     Password"
+          style={{paddingLeft:10, marginTop:5}}
+        placeholder="Password"
         onChangeText={newSenha => setSenha(newSenha)}
         defaultValue={senha}
     />
+    </View>
     <TouchableOpacity>
       <Text>esqueceu a senha?</Text>
     </TouchableOpacity> 
@@ -52,7 +61,7 @@ export default ({navigation, route}) => {
         <CustomButton title= 'Login' color = '#6046F2' onPress={()=> validaEmail()}/>
       
         <View style = {Style.cadastro} >
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {navigation.navigate('cadastro')}}>
               <Text>
                 Cadastre-se
               </Text>

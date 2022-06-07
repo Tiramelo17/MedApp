@@ -14,11 +14,9 @@ const styles = StyleSheet.create({
     width: '60%'
   },
   view:{
-    marginTop: 40,
     alignItems: 'center',
-    padding: 10,
-    backgroundColor: '#24CBAF',
-    
+    width: '100%',
+    height: '20%'    
   },
   text:{
     fontFamily: 'Roboto',
@@ -39,8 +37,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width: '80%',
     height: 40,
-    backgroundColor: '#91E843',
+    backgroundColor: '#24CBAF',
     borderRadius: 10,  
+    borderWidth: 2,
+    borderColor: "black",
+  }, img: {
+    height: 300,
+    width: 500
   }
 })
 
