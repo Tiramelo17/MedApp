@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, View, Text, FlatList } from 'react-native'
+import { StyleSheet, View, Text, FlatList, ScrollView } from 'react-native'
 import { Button, Dialog, Provider, Portal, TextInput } from 'react-native-paper'
 import * as AlergiasAPI from '../APIs/alergiasAPI'
 import * as CirurgiasAPI from '../APIs/cirurgiasAPI'
@@ -248,6 +248,7 @@ export default () => {
     )
 
     return (
+      <ScrollView>
         <Provider>
             <View>
                 <Text style={styles.nome}>Alergias</Text>
@@ -637,6 +638,8 @@ export default () => {
                 </Dialog>
             </Portal>
         </Provider>
+     </ScrollView>
+
     )
 }
 
