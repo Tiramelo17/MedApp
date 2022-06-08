@@ -54,18 +54,16 @@ export default ({navigation, route}) => {
         navigation.navigate('login')
       }    
   }
-
   return(
- <ScrollView horizontal={false} vertical={true} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} contentContainerStyle={{flex:1}}>
- 
-      <View style={Style.container}>
+<View style={Style.container}>
           <View style = {Style.view}>
               <View style = {Style.textoLogo}>
-              <Text style={Style.text}>Cadastro </Text>
+                <Text style={Style.text}>Cadastro </Text>
+              </View>
           </View>
-    </View>
-      <View  style={Style.input}>
+<View  style={Style.input}>
       
+   <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} style={{height:'100%', width: '80%'}}>
       <View style={Style.textInput}> 
         <TextInput
           style={{paddingLeft:10, marginTop:5}}
@@ -150,13 +148,12 @@ export default ({navigation, route}) => {
       
         </View>
 
+      <View style={Style.buttons}>
+         <CustomButton title= 'Cadastrar' color = '#6046F2' onPress={()=> cadastroCliente()}/>
+      </View>
       
-        <View style={Style.buttons}>
-          <CustomButton title= 'Cadastrar' color = '#6046F2' onPress={()=> cadastroCliente()}/>
-        
-        </View>
+       </ScrollView>
       </View>
-      </View>
-  </ScrollView>
+   </View>
   )
 }

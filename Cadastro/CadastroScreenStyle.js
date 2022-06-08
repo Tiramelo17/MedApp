@@ -9,9 +9,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#24CBAF',
   },
   buttons: {
-    flex: 1,
     marginTop: 70,
-    width: '60%'
+    width: '80%',
+    marginLeft: 30
   },
   view:{
     marginTop: 40,
@@ -34,12 +34,11 @@ const styles = StyleSheet.create({
   }, input: {
     marginTop: 20,
     alignItems: 'center',
-    height: '50%',
+    height: '100%',
   }, textInput: {
     marginTop: 10,
-    width: '80%',
-    height: 40,
     backgroundColor: '#24CBAF',
+    width:'100%',
     borderRadius: 10,  
     borderWidth: 2,
     borderColor: "black",
